@@ -488,6 +488,45 @@ foaf:Person rdf:type owl:Class ;
 
 
 #################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/narrativeExam#bookShop1
+:bookShop1 rdf:type owl:NamedIndividual ,
+                    :BookShop .
+
+
+###  http://www.semanticweb.org/narrativeExam#bookShop2
+:bookShop2 rdf:type owl:NamedIndividual ,
+                    :BookShop .
+
+
+###  http://www.semanticweb.org/narrativeExam#bookShop3
+:bookShop3 rdf:type owl:NamedIndividual ,
+                    :BookShop .
+
+
+###  http://www.semanticweb.org/narrativeExam#bookShop4
+:bookShop4 rdf:type owl:NamedIndividual ,
+                    :BookShop .
+
+
+###  http://www.semanticweb.org/narrativeExam#publisher1
+:publisher1 rdf:type owl:NamedIndividual ,
+                     :Publisher .
+
+
+###  http://www.semanticweb.org/narrativeExam#publisher2
+:publisher2 rdf:type owl:NamedIndividual ,
+                     :Publisher .
+
+
+###  http://www.semanticweb.org/narrativeExam#publisher3
+:publisher3 rdf:type owl:NamedIndividual ,
+                     :Publisher .
+
+
+#################################################################
 #    General axioms
 #################################################################
 
