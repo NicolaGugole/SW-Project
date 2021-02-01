@@ -1,0 +1,388 @@
+@prefix : <http://www.semanticweb.org/narrativeExam#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dctypes: <http://purl.org/dc/dcmitype/> .
+@base <http://www.semanticweb.org/narrativeExam> .
+
+<http://www.semanticweb.org/narrativeExam> rdf:type owl:Ontology ;
+                                            rdfs:comment "Ontology expressing the application domain related to narratives for the Semantic Web exam."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/narrativeExam#composedOf
+:composedOf rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isPartOf ;
+            rdfs:domain :Narrative ;
+            rdfs:range :Event ;
+            rdfs:comment "composedOf relates a Narrative to the Event it contains."@en ;
+            rdfs:label "composedOf"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#createdBy
+:createdBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :creates ;
+           rdfs:domain :Narrative ;
+           rdfs:range :Narrator ;
+           rdfs:comment "createdBy relates a Narrative to the Narrator which creates it."@en ;
+           rdfs:label "createdBy"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#creates
+:creates rdf:type owl:ObjectProperty ;
+         rdfs:domain :Narrator ;
+         rdfs:range :Narrative ;
+         rdfs:comment "creates relates a Narrator to the Narrative he/she developed."@en ;
+         rdfs:label "creates"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#givesContractTo
+:givesContractTo rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :hasContractWith ;
+                 rdfs:domain :Publisher ;
+                 rdfs:range :Narrator ;
+                 rdfs:comment "givesContractTo relates a Publisher to the Narrator employed."@en ;
+                 rdfs:label "givesContractTo"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasCharacter
+:hasCharacter rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasPartecipant ;
+              owl:inverseOf :isCharacterOf ;
+              rdfs:domain :Event ;
+              rdfs:range :Character ;
+              rdfs:comment "hasCharacter relates an Event to the Character which is member of the Event."@en ;
+              rdfs:label "hasCharacter"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasContractWith
+:hasContractWith rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Narrator ;
+                 rdfs:range :Publisher ;
+                 rdfs:comment "hasContractWith relates a Narrator to the Publisher which gives him the contract."@en ;
+                 rdfs:label "hasContractWith"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasObject
+:hasObject rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasPartecipant ;
+           owl:inverseOf :isObjectOf ;
+           rdfs:domain :Event ;
+           rdfs:range :Object ;
+           rdfs:comment "hasObject relates an Event to the Object which is part of the Event."@en ;
+           rdfs:label "hasObject"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasPartecipant
+:hasPartecipant rdf:type owl:ObjectProperty ;
+                owl:inverseOf :isPartecipantOf ;
+                rdfs:domain :Event ;
+                rdfs:range :Partecipant ;
+                rdfs:comment "hasPartecipant relates an Event to the Partecipant which is member of the Event."@en ;
+                rdfs:label "hasPartecipant"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasPublisher
+:hasPublisher rdf:type owl:ObjectProperty ;
+              owl:inverseOf :publishes ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Book ;
+              rdfs:range :Publisher ;
+              rdfs:comment "hasPublisher relates a Book to the Publisher which publishes said Book."@en ;
+              rdfs:label "hasPublisher"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#isCharacterOf
+:isCharacterOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :isPartecipantOf ;
+               rdfs:domain :Character ;
+               rdfs:range :Event ;
+               rdfs:comment "isCharacterOf relates a Character to the Event he/she partecipates in."@en ;
+               rdfs:label "isCharacterOf"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#isObjectOf
+:isObjectOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isPartecipantOf ;
+            rdfs:domain :Object ;
+            rdfs:range :Event ;
+            rdfs:comment "isObjectOf relates an Object to the Event it partecipates in."@en ;
+            rdfs:label "isObjectOf"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Event ;
+          rdfs:range :Narrative ;
+          rdfs:comment "isPartOf relates an Event to the Narrative it is part of."@en ;
+          rdfs:label "isPartOf"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#isPartecipantOf
+:isPartecipantOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Partecipant ;
+                 rdfs:range :Event ;
+                 rdfs:comment "isPartecipantOf relates a Partecipant to the Event he/she/it partecipates in."@en ;
+                 rdfs:label "isPartecipantOf"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#isPlaceOf
+:isPlaceOf rdf:type owl:ObjectProperty ;
+           owl:inverseOf :occursIn ;
+           rdf:type owl:InverseFunctionalProperty ;
+           rdfs:domain dctypes:Location ;
+           rdfs:range :Event ;
+           rdfs:comment "isPlaceOf relates a Location to the Event in which the Event takes place."@en ;
+           rdfs:label "isPlaceOf"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#occursIn
+:occursIn rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Event ;
+          rdfs:range dctypes:Location ;
+          rdfs:comment "occursIn relates an Event to the Location in which the Event takes place."@en ;
+          rdfs:label "occursIn"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#publishes
+:publishes rdf:type owl:ObjectProperty ,
+                    owl:InverseFunctionalProperty ;
+           rdfs:domain :Publisher ;
+           rdfs:range :Book ;
+           rdfs:comment "publishes relates a Publisher to the Book it publishes."@en ;
+           rdfs:label "publishes"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#reportedBy
+:reportedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :reports ;
+            rdfs:domain :Narrative ;
+            rdfs:range :Book ;
+            rdfs:comment "reportedBy relates a Narrative to the Book which contains said Narrative."@en ;
+            rdfs:label "reportedBy"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#reports
+:reports rdf:type owl:ObjectProperty ;
+         rdfs:domain :Book ;
+         rdfs:range :Narrative ;
+         rdfs:comment "reports relates a Book to the Narrative it contains."@en ;
+         rdfs:label "reports"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#sellsBookIn
+:sellsBookIn rdf:type owl:ObjectProperty ;
+             owl:inverseOf :sellsBookOf ;
+             rdfs:domain :Publisher ;
+             rdfs:range :BookShop ;
+             rdfs:comment "sellsBookIn relates a Publisher with the BookShop in which it sells its Books."@en ;
+             rdfs:label "sellsBookIn"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#sellsBookOf
+:sellsBookOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :BookShop ;
+             rdfs:range :Publisher ;
+             rdfs:comment "sellsBookOf relates a BookShop to the Publisher of which Books it sells."@en ;
+             rdfs:label "sellsBookOf"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/narrativeExam#hasBeginning
+:hasBeginning rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :hasTimeDelimiter ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Event ;
+              rdfs:range xsd:dateTime ;
+              rdfs:comment "hasBeginning relates Event with its datetime of beginning."@en ;
+              rdfs:label "hasBeginning"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasData
+:hasData rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string ;
+         rdfs:comment "hasData relates a subject with its textual name or other textual information on it."@en ;
+         rdfs:label "hasData"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasEnding
+:hasEnding rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :hasTimeDelimiter ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Event ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "hasEnding relates Event with its datetime of ending."@en ;
+           rdfs:label "hasEnding"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasID
+:hasID rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Publisher ;
+       rdfs:range xsd:positiveInteger ;
+       rdfs:comment "hasID relates Publisher with its identifying code."@en ;
+       rdfs:label "hasID"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasISBN
+:hasISBN rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :hasData ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Book ;
+         rdfs:range xsd:string ;
+         rdfs:comment "hasISBN relates Book with its ISBN code."@en ;
+         rdfs:label "hasISBN"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :hasData ;
+         rdfs:range xsd:string ;
+         rdfs:comment "hasName relates a subject with its name."@en ;
+         rdfs:label "hasName"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasPrice
+:hasPrice rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:positiveInteger ;
+          rdfs:comment "hasPrice relates a Book with its price."@en ;
+          rdfs:label "hasPrice"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasTimeDelimiter
+:hasTimeDelimiter rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Event ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:comment "hasTimeDelimiter relates Event with its time delimiting datetime."@en ;
+                  rdfs:label "hasTimeDelimiter"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :hasData ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:string ;
+          rdfs:comment "hasTitle relates Book with its title."@en ;
+          rdfs:label "hasTitle"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/dcmitype/Location
+dctypes:Location rdf:type owl:Class ;
+                 rdfs:comment "A spatial region or named place."@en ;
+                 rdfs:label "Location"@en .
+
+
+###  http://purl.org/dc/dcmitype/Text
+dctypes:Text rdf:type owl:Class ;
+             rdfs:comment "A resource consisting primarily of words for reading."@en ;
+             rdfs:label "Text"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Book
+:Book rdf:type owl:Class ;
+      rdfs:subClassOf dctypes:Text ;
+      rdfs:comment "A Book is a sequence of one or more Narratives."@en ;
+      rdfs:label "Book"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#BookShop
+:BookShop rdf:type owl:Class ;
+          rdfs:comment "A BookShop is a place where Books are sold."@en ;
+          rdfs:label "BookShop"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Character
+:Character rdf:type owl:Class ;
+           rdfs:subClassOf :Partecipant ;
+           rdfs:comment "A Character is an alive Participant."@en ;
+           rdfs:label "Character"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Event
+:Event rdf:type owl:Class ;
+       rdfs:comment "Event is part of a Narrative and occurs in a Location. It is time restricted between a beginning time and an ending time. It has at least a Character or Object Partecipant."@en ;
+       rdfs:label "Event"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#FictionalLocation
+:FictionalLocation rdf:type owl:Class ;
+                   rdfs:subClassOf dctypes:Location ;
+                   rdfs:comment "A Location existing in the fictional world of a Narrative."@en ;
+                   rdfs:label "FictionalLocation"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Human
+:Human rdf:type owl:Class ;
+       rdfs:subClassOf :Character ;
+       rdfs:comment "A Character belonging to the Human species."@en ;
+       rdfs:label "Human"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Narrative
+:Narrative rdf:type owl:Class ;
+           rdfs:comment "A Narrative is a composition of one or more Events and is developed by one or more Narrators."@en ;
+           rdfs:label "Narrative"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Narrator
+:Narrator rdf:type owl:Class ;
+          rdfs:subClassOf foaf:Person ;
+          rdfs:comment "Narrator is a person who develops narratives."@en ;
+          rdfs:label "Narrator"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#NonHuman
+:NonHuman rdf:type owl:Class ;
+          rdfs:subClassOf :Character ;
+          rdfs:comment "A character not belonging to the human species, possibly belonging to a fictional species."@en ;
+          rdfs:label "NonHuman"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Object
+:Object rdf:type owl:Class ;
+        rdfs:subClassOf :Partecipant ;
+        rdfs:comment "Object is an inanimate partecipant."@en ;
+        rdfs:label "Object"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Partecipant
+:Partecipant rdf:type owl:Class ;
+             rdfs:comment "Partecipant is someone or something that takes part in an Event."@en ;
+             rdfs:label "Partecipant"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#Publisher
+:Publisher rdf:type owl:Class ;
+           rdfs:comment "A publisher is an organization which publishes and sells books."@en ;
+           rdfs:label "Publisher"@en .
+
+
+###  http://www.semanticweb.org/narrativeExam#RealLocation
+:RealLocation rdf:type owl:Class ;
+              rdfs:subClassOf dctypes:Location ;
+              rdfs:comment "A location existing in the world."@en ;
+              rdfs:label "RealLocation"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:comment "The Person class represents people."@en ;
+            rdfs:label "Person"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
