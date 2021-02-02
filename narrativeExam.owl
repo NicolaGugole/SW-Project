@@ -491,6 +491,36 @@ foaf:Person rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/narrativeExam#book1
+:book1 rdf:type owl:NamedIndividual ,
+                :Book .
+
+
+###  http://www.semanticweb.org/narrativeExam#book2
+:book2 rdf:type owl:NamedIndividual ,
+                :Book .
+
+
+###  http://www.semanticweb.org/narrativeExam#book3
+:book3 rdf:type owl:NamedIndividual ,
+                :Book .
+
+
+###  http://www.semanticweb.org/narrativeExam#book4
+:book4 rdf:type owl:NamedIndividual ,
+                :Book .
+
+
+###  http://www.semanticweb.org/narrativeExam#book5
+:book5 rdf:type owl:NamedIndividual ,
+                :Book .
+
+
+###  http://www.semanticweb.org/narrativeExam#book6
+:book6 rdf:type owl:NamedIndividual ,
+                :Book .
+
+
 ###  http://www.semanticweb.org/narrativeExam#bookShop1
 :bookShop1 rdf:type owl:NamedIndividual ,
                     :BookShop .
@@ -511,19 +541,343 @@ foaf:Person rdf:type owl:Class ;
                     :BookShop .
 
 
+###  http://www.semanticweb.org/narrativeExam#char1
+:char1 rdf:type owl:NamedIndividual ,
+                :Human ;
+       :hasName "human1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#char2
+:char2 rdf:type owl:NamedIndividual ,
+                :Human ;
+       :hasName "human2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#char3
+:char3 rdf:type owl:NamedIndividual ,
+                :Human ;
+       :hasName "human3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#char4
+:char4 rdf:type owl:NamedIndividual ,
+                :Human ;
+       :hasName "human4"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#char5
+:char5 rdf:type owl:NamedIndividual ,
+                :NonHuman ;
+       :hasName "non_human1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#char6
+:char6 rdf:type owl:NamedIndividual ,
+                :NonHuman ;
+       :hasName "non_human2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#char7
+:char7 rdf:type owl:NamedIndividual ,
+                :NonHuman ;
+       :hasName "non_human3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#event01
+:event01 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char1 ;
+         :hasObject :obj3 ;
+         :occursIn :real1 ;
+         :hasBeginning "2001-10-26T21:32:52"^^xsd:dateTime ;
+         :hasEnding "2001-11-30T21:32:52"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event02
+:event02 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char2 ,
+                       :char3 ,
+                       :char4 ;
+         :hasObject :obj5 ;
+         :occursIn :real2 ;
+         :hasBeginning "1945-10-26T00:00:00"^^xsd:dateTime ;
+         :hasEnding "1945-10-31T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event03
+:event03 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char3 ,
+                       :char4 ,
+                       :char7 ;
+         :hasObject :obj2 ,
+                    :obj4 ;
+         :occursIn :real3 ;
+         :hasBeginning "1970-10-26T21:14:00"^^xsd:dateTime ;
+         :hasEnding "1979-11-30T10:32:51"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event04
+:event04 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char5 ,
+                       :char6 ;
+         :hasObject :obj1 ,
+                    :obj4 ;
+         :occursIn :real1 ;
+         :hasBeginning "1492-10-12T09:14:00"^^xsd:dateTime ;
+         :hasEnding "1493-01-12T09:14:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event05
+:event05 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char1 ,
+                       :char2 ,
+                       :char3 ,
+                       :char4 ;
+         :hasObject :obj1 ,
+                    :obj3 ;
+         :occursIn :fictional1 ;
+         :hasBeginning "1610-01-12T09:13:00"^^xsd:dateTime ;
+         :hasEnding "1610-04-16T09:17:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event06
+:event06 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char4 ,
+                       :char6 ;
+         :occursIn :fictional2 ;
+         :hasBeginning "1776-07-04T00:00:00"^^xsd:dateTime ;
+         :hasEnding "1776-07-04T23:59:59"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event07
+:event07 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasObject :obj2 ;
+         :occursIn :fictional3 ;
+         :hasBeginning "1998-08-03T00:00:00"^^xsd:dateTime ;
+         :hasEnding "1999-01-25T23:59:59"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event08
+:event08 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char1 ,
+                       :char5 ,
+                       :char6 ,
+                       :char7 ;
+         :hasObject :obj2 ,
+                    :obj3 ,
+                    :obj4 ;
+         :occursIn :fictional1 ;
+         :hasBeginning "3000-05-09T00:00:00"^^xsd:dateTime ;
+         :hasEnding "3000-06-25T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event09
+:event09 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char1 ;
+         :hasObject :obj4 ;
+         :occursIn :real2 ;
+         :hasBeginning "0000-01-01T00:00:00"^^xsd:dateTime ;
+         :hasEnding "0033-01-01T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#event10
+:event10 rdf:type owl:NamedIndividual ,
+                  :Event ;
+         :hasCharacter :char1 ,
+                       :char2 ,
+                       :char3 ,
+                       :char4 ,
+                       :char5 ,
+                       :char6 ,
+                       :char7 ;
+         :hasObject :obj1 ,
+                    :obj2 ,
+                    :obj3 ,
+                    :obj4 ,
+                    :obj5 ;
+         :occursIn :real1 ;
+         :hasBeginning "0476-01-01T00:00:00"^^xsd:dateTime ;
+         :hasEnding "0476-01-01T00:00:01"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/narrativeExam#fictional1
+:fictional1 rdf:type owl:NamedIndividual ,
+                     :FictionalLocation ;
+            :hasName "Hogwarts"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#fictional2
+:fictional2 rdf:type owl:NamedIndividual ,
+                     :FictionalLocation ;
+            :hasName "Narnia"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#fictional3
+:fictional3 rdf:type owl:NamedIndividual ,
+                     :FictionalLocation ;
+            :hasName "Middle Earth"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrative1
+:narrative1 rdf:type owl:NamedIndividual ,
+                     :Narrative .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrative2
+:narrative2 rdf:type owl:NamedIndividual ,
+                     :Narrative .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrative3
+:narrative3 rdf:type owl:NamedIndividual ,
+                     :Narrative .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrative4
+:narrative4 rdf:type owl:NamedIndividual ,
+                     :Narrative .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrative5
+:narrative5 rdf:type owl:NamedIndividual ,
+                     :Narrative .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrative6
+:narrative6 rdf:type owl:NamedIndividual ,
+                     :Narrative .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrative7
+:narrative7 rdf:type owl:NamedIndividual ,
+                     :Narrative .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrative8
+:narrative8 rdf:type owl:NamedIndividual ,
+                     :Narrative .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrator1
+:narrator1 rdf:type owl:NamedIndividual ,
+                    :Narrator ;
+           :hasContractWith :publisher1 .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrator2
+:narrator2 rdf:type owl:NamedIndividual ,
+                    :Narrator ;
+           :hasContractWith :publisher3 .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrator3
+:narrator3 rdf:type owl:NamedIndividual ,
+                    :Narrator ;
+           :hasContractWith :publisher1 .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrator4
+:narrator4 rdf:type owl:NamedIndividual ,
+                    :Narrator ;
+           :hasContractWith :publisher2 .
+
+
+###  http://www.semanticweb.org/narrativeExam#narrator5
+:narrator5 rdf:type owl:NamedIndividual ,
+                    :Narrator .
+
+
+###  http://www.semanticweb.org/narrativeExam#obj1
+:obj1 rdf:type owl:NamedIndividual ,
+               :Object ;
+      :hasName "object1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#obj2
+:obj2 rdf:type owl:NamedIndividual ,
+               :Object ;
+      :hasName "object2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#obj3
+:obj3 rdf:type owl:NamedIndividual ,
+               :Object ;
+      :hasName "object3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#obj4
+:obj4 rdf:type owl:NamedIndividual ,
+               :Object ;
+      :hasName "object4"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#obj5
+:obj5 rdf:type owl:NamedIndividual ,
+               :Object ;
+      :hasName "object5"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/narrativeExam#publisher1
 :publisher1 rdf:type owl:NamedIndividual ,
-                     :Publisher .
+                     :Publisher ;
+            :publishes :book1 ,
+                       :book2 ;
+            :sellsBookIn :bookShop1 ,
+                         :bookShop2 ,
+                         :bookShop3 ;
+            :hasID "19"^^xsd:positiveInteger ;
+            :hasName "Penguin Random House"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/narrativeExam#publisher2
 :publisher2 rdf:type owl:NamedIndividual ,
-                     :Publisher .
+                     :Publisher ;
+            :publishes :book3 ,
+                       :book4 ;
+            :sellsBookIn :bookShop2 ,
+                         :bookShop3 ,
+                         :bookShop4 ;
+            :hasID "57"^^xsd:positiveInteger ;
+            :hasName "HarperCollins"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/narrativeExam#publisher3
 :publisher3 rdf:type owl:NamedIndividual ,
-                     :Publisher .
+                     :Publisher ;
+            :publishes :book5 ,
+                       :book6 ;
+            :sellsBookIn :bookShop1 ,
+                         :bookShop2 ,
+                         :bookShop3 ,
+                         :bookShop4 ;
+            :hasID "5001"^^xsd:positiveInteger ;
+            :hasName "Macmillan Publishers"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#real1
+:real1 rdf:type owl:NamedIndividual ,
+                :RealLocation ;
+       :hasName "England"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#real2
+:real2 rdf:type owl:NamedIndividual ,
+                :RealLocation ;
+       :hasName "Germany"^^xsd:string .
+
+
+###  http://www.semanticweb.org/narrativeExam#real3
+:real3 rdf:type owl:NamedIndividual ,
+                :RealLocation ;
+       :hasName "Dublin"^^xsd:string .
 
 
 #################################################################
@@ -540,6 +894,25 @@ foaf:Person rdf:type owl:Class ;
                 :Publisher
                 foaf:Person
               )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :book1
+                        :book2
+                        :book3
+                        :book4
+                        :book5
+                        :book6
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :publisher1
+                        :publisher2
+                        :publisher3
+                      )
 ] .
 
 
