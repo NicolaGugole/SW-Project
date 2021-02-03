@@ -29,40 +29,69 @@ notation. In particular, the ontology must:
 
 Q1. Declare the required classes, providing for each class a textual label and a concise textual description of
 the intension of the class, using the appropriate annotation properties from the RDF Schema vocabulary
+
 Q2. Provide the sub-class axioms defining the class taxonomy
+
 Q3. Declare the required object properties, providing for each property:
-Q.1. a textual label, using the appropriate annotation property from the RDFS vocabulary
-Q3.2. a textual description of the intension of the property, using the appropriate annotation property
+
+&ensp;&ensp;Q3.1. a textual label, using the appropriate annotation property from the RDFS vocabulary
+
+&ensp;&ensp;Q3.2. a textual description of the intension of the property, using the appropriate annotation property
 from the RDFS vocabulary
-Q3.3. one axiom defining the domain of the property
-Q3.4. one axiom defining the range of the property
-Q3.5. one axiom defining the inverse of the property
-Q3.6. any additional axioms expressing disjointness of the property with other object properties, and
+
+&ensp;&ensp;Q3.3. one axiom defining the domain of the property
+
+&ensp;&ensp;Q3.4. one axiom defining the range of the property
+
+&ensp;&ensp;Q3.5. one axiom defining the inverse of the property
+
+&ensp;&ensp;Q3.6. any additional axioms expressing disjointness of the property with other object properties, and
 the property characteristics.
+
 Q4. Provide the sub-property axioms defining the object property taxonomy
+
 Q5. Declare the required data properties, providing:
-Q5.1. a textual label, using the appropriate annotation property from the RDFS vocabulary
-Q5.2. a textual description of the intension of the property, using the appropriate annotation property
+
+&ensp;&ensp;Q5.1. a textual label, using the appropriate annotation property from the RDFS vocabulary
+
+&ensp;&ensp;Q5.2. a textual description of the intension of the property, using the appropriate annotation property
 from the RDFS vocabulary
-Q5.3. one axiom defining the domain of the property
-Q5.4. one axiom defining the range of the property
-Q5.5. any additional axioms expressing disjointness of the property with other data properties, and
-whether the property is functional.
+
+&ensp;&ensp;Q5.3. one axiom defining the domain of the property
+
+&ensp;&ensp;Q5.4. one axiom defining the range of the property
+
+&ensp;&ensp;Q5.5. any additional axioms expressing disjointness of the property with other data properties, and
+
+&ensp;&ensp;whether the property is functional.
+
 Q6. Define the axioms necessary for expressing any statement in 1 to 16 that has not already been
 expressed.
+
 Q7. Populate the ontology with at least one individual for each class, and at least one assertion for each
 property.
+
+
 In addition, the candidate must:
 Q8. Identify two different assertions that would make the ontology inconsistent.
+
 Q9. Define the complex role inclusion axiom capturing the fact that if a narrator creates a narrative that is
 reported in a book that is published by a publisher, then the narrator has a contract with that
 publisher.
+
 Q10. Verify if the created ontology (including the complex role inclusion axiom defined in Q9) satisfies
 the global restrictions on the axioms of an OWL 2 DL ontology.
+
 Q11. Write the following queries in SPARQL:
-Q11.1. Find how many events occurred in real locations, grouped by location.
-Q11.2. Find all the books with the ID of the publisher lower than 5000.
-Q11.3. Find all the events that do not have any human participants.
-Q11.4. Find the number of the narratives that are published in a book, along with the title of the book,
-the ISBN code of the book and the publisher of the book.
-Q11.5. Find all the distinct events that have a human participant or occur in a real location.
+
+&ensp;&ensp;Q11.1. Find how many events occurred in real locations, grouped by location.
+
+&ensp;&ensp;Q11.2. Find all the books with the ID of the publisher lower than 5000.
+
+&ensp;&ensp;Q11.3. Find all the events that do not have any human participants.
+
+&ensp;&ensp;Q11.4. Find the number of the narratives that are published in a book, along with the title of the book,
+
+&ensp;&ensp;the ISBN code of the book and the publisher of the book.
+
+&ensp;&ensp;Q11.5. Find all the distinct events that have a human participant or occur in a real location.
