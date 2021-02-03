@@ -1,6 +1,7 @@
 # SW-Project
 Project of the course of Semantic Web 2020/2021 @ University of Pisa
-Exercise
+
+### Exercise
 The fundamental concepts in an application domain related to narratives (intended as stories about a specific
 topic) are: events, characters, objects and locations. Some of the facts that characterise this domain can be
 stated as follows:
